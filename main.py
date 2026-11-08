@@ -15,7 +15,23 @@ def ajouter_tache():
         return
     taches.append(titre)
     print("Tâche ajoutée avec succès.")
-
+def afficher_taches():
+    if len(taches) == 0:
+        print("Aucune tâche dans la liste.")
+        return
+    for i in range(len(taches)):
+        print(f"{i + 1}. {taches[i]}")
+ 
+ 
+def rechercher_tache():
+    mot_cle = input("Mot-clé : ").strip().lower()
+    trouve = False
+    for i in range(len(taches)):
+        if mot_cle in taches[i].lower():
+            print(f"{i + 1}. {taches[i]}")
+            trouve = True
+    if not trouve:
+        print("Aucune tâche trouvée.")
 
 def main():
     continuer = True
